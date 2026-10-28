@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="สุ่มเมนูอาหารไทยสุดอร่อย ไม่ต้องคิดนาน กดปุ่มเดียวก็รู้ว่ามื้อนี้จะกินอะไร">
+  <meta name="theme-color" content="#f7f1e6">
+  <title>วันนี้กินไรดี? | Thai Food Randomizer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9C%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#randomizer">ข้ามไปที่การสุ่มเมนู</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#home" aria-label="วันนี้กินไรดี หน้าแรก">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M6 14.5h20c0 6.1-4.5 10.3-10 10.3S6 20.6 6 14.5Z" fill="currentColor"/>
+            <path d="M9.5 10.5c0-1.3.8-1.8.8-3.2M15.2 10.5c0-1.3.8-1.8.8-3.2M20.9 10.5c0-1.3.8-1.8.8-3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 27h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">วันนี้กินไร<span>ดี</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="เมนูหลัก">
+        <a href="#home" class="is-active">หน้าแรก</a>
+        <a href="#menu-list">รายการอาหาร</a>
+        <a href="#about">เกี่ยวกับ</a>
+      </nav>
+
+      <a class="nav-cta" href="#randomizer" aria-label="เริ่มสุ่มเมนู">
+        <span>เริ่มสุ่ม</span>
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M5 15 15 5M7.5 5H15v7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <span class="eyebrow-star" aria-hidden="true">✦</span>
+          Thai Food Randomizer
+        </span>
+
+        <h1 id="hero-title">
+          มื้อนี้...
+          <span class="title-accent">
+            กินอะไรดี?
+            <svg class="title-underline" viewBox="0 0 420 24" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M7 16C112 6 246 3 412 13" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+
+        <p class="hero-lead">ไม่ต้องนั่งคิดจนหิวอีกต่อไป ปล่อยให้เราสุ่มเมนูไทยจานโปรดให้คุณ กดปุ่มเดียวแล้วไปกินเลย!</p>
+
+        <div class="hero-bottom">
+          <div class="photo-stack" aria-hidden="true">
+            <img src="assets/kra-pao.jpg" alt="" width="1200" height="1600">
+            <img src="assets/khao-man-gai.jpg" alt="" width="1200" height="900">
+            <img src="assets/khao-kai-garlic.jpg" alt="" width="1200" height="1500">
+            <span class="stack-count">+2</span>
+          </div>
+          <div class="hero-note">
+            <strong>5 เมนูคัดสรร</strong>
+            <span>พร้อมเสิร์ฟให้เลือกทุกวัน</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-stage" id="randomizer">
+        <span class="floating-sticker" aria-hidden="true"><span>★</span> คัดมาแล้ว</span>
+        <span class="stage-spark stage-spark-one" aria-hidden="true">✦</span>
+        <span class="stage-spark stage-spark-two" aria-hidden="true">✧</span>
+
+        <article class="food-card">
+          <div class="food-media">
+            <img id="foodImage" src="assets/kra-pao.jpg" alt="ข้าวกะเพราหมูสับไข่ดาว" width="1200" height="1600" fetchpriority="high">
+            <div class="media-shade" aria-hidden="true"></div>
+            <span class="menu-badge"><span aria-hidden="true"></span> เมนูที่สุ่มได้</span>
+            <span class="menu-index"><span id="currentNumber">01</span><span class="menu-index-total">/ 05</span></span>
+          </div>
+
+          <div class="food-body">
+            <div class="food-topline">
+              <span class="food-category"><span class="category-dot" aria-hidden="true"></span><span id="foodCategory">จานเดียว</span></span>
+              <span class="food-rating" aria-label="คะแนนความอร่อย">
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="m10 1.8 2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4L2.2 7.5l5.4-.8L10 1.8Z" fill="currentColor"/>
+                </svg>
+                <span id="foodRating">4.9</span>
+              </span>
+            </div>
+
+            <h2 class="food-name" id="foodName">ข้าวกะเพราหมูสับไข่ดาว</h2>
+            <p class="food-desc" id="foodDescription">หมูสับผัดใบกะเพรารสจัดจ้าน หอมพริกและกระเทียม เสิร์ฟพร้อมข้าวสวยร้อนๆ กับไข่ดาวขอบกรอบ</p>
+
+            <div class="price-line">
+              <p class="price"><span class="price-label">ราคา</span><span class="price-currency">฿</span><span id="foodPrice">65</span></p>
+              <span class="price-note">ราคาต่อจาน</span>
+            </div>
+
+            <button class="random-button" id="randomButton" type="button">
+              <span class="dice-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="8.2" cy="8.2" r="1.35" fill="currentColor"/>
+                  <circle cx="15.8" cy="8.2" r="1.35" fill="currentColor"/>
+                  <circle cx="12" cy="12" r="1.35" fill="currentColor"/>
+                  <circle cx="8.2" cy="15.8" r="1.35" fill="currentColor"/>
+                  <circle cx="15.8" cy="15.8" r="1.35" fill="currentColor"/>
+                </svg>
+              </span>
+              <span id="buttonLabel">สุ่มเมนูให้หน่อย</span>
+              <svg class="button-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <div class="roll-meta">
+              <span class="roll-status"><span class="status-dot" aria-hidden="true"></span><span id="rollStatus">พร้อมเสิร์ฟ! กดปุ่มได้เลย</span></span>
+              <span id="rollCount">สุ่มแล้ว 0 ครั้ง</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu-list" aria-labelledby="menu-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">All Menus</span>
+          <h2 id="menu-title">ห้าจานนี้... อร่อยไม่แพ้กัน</h2>
+        </div>
+        <p>เลือกดูเมนูที่ถูกใจ แล้วกดการ์ดเพื่อแสดงรายละเอียดด้านบนได้เลย</p>
+      </div>
+
+      <div class="menu-grid" id="menuGrid"></div>
+      <noscript><p class="noscript-note">กรุณาเปิด JavaScript เพื่อใช้งานการสุ่มเมนู</p></noscript>
+    </section>
+
+    <p class="sr-only" id="liveRegion" aria-live="polite"></p>
+  </main>
+
+  <footer class="site-footer" id="about">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="brand brand-light" href="#home" aria-label="วันนี้กินไรดี หน้าแรก">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M6 14.5h20c0 6.1-4.5 10.3-10 10.3S6 20.6 6 14.5Z" fill="currentColor"/>
+              <path d="M9.5 10.5c0-1.3.8-1.8.8-3.2M15.2 10.5c0-1.3.8-1.8.8-3.2M20.9 10.5c0-1.3.8-1.8.8-3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 27h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">วันนี้กินไร<span>ดี</span></span>
+        </a>
+        <p>เว็บสุ่มเมนูเล็ก ๆ สำหรับคนที่เลือกอาหารไม่ถูก แต่ยังอยากกินของอร่อย</p>
+      </div>
+
+      <div class="footer-credit">
+        <strong>เครดิตภาพ</strong>
+        <p>
+          ข้าวกะเพรา: <a href="https://unsplash.com/photos/fried-rice-with-sunny-side-up-egg-on-gray-ceramic-plate-NT5oqzp-050" target="_blank" rel="noreferrer">Vicky Ng</a> / Unsplash ·
+          ไก่ย่าง: <a href="https://commons.wikimedia.org/wiki/File:Kai_yang_and_nam_chim.jpg" target="_blank" rel="noreferrer">Takeaway</a> / CC BY-SA 3.0 ·
+          บะหมี่: <a href="https://commons.wikimedia.org/wiki/File:Bami_mu_daeng_kiao.JPG" target="_blank" rel="noreferrer">Takeaway</a> / CC BY-SA 3.0 ·
+          ข้าวมันไก่: <a href="https://commons.wikimedia.org/wiki/File:Hainanese_chicken_rice_at_Thai_Ten.jpg" target="_blank" rel="noreferrer">Peachyeung316</a> / CC BY-SA 4.0 ·
+          ข้าวไก่กระเทียม: <a href="https://unsplash.com/photos/a-plate-of-chicken-and-rice-on-a-table-RK_L7fq7E0A" target="_blank" rel="noreferrer">Mayte Baque</a> / Unsplash
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 วันนี้กินไรดี — Made for hungry humans.</p>
+      <a href="#home">กลับขึ้นด้านบน <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
